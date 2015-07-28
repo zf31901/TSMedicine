@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     self.navigationController.navigationBarHidden  = NO;
     self.title = @"设置";
     NSArray *titleArr = @[@"关于我们",@"意见反馈",@"清除缓存"];

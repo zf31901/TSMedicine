@@ -21,6 +21,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [YYTabBarViewController initIalizeTab];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
