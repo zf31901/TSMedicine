@@ -10,6 +10,8 @@
 	<string>TSMedicine</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>4159174788E55AA9A23B4546C99E9FAF0F8CA5EB</key>
+		<string>https://github.com/zf31901/TSMedicine.git</string>
 		<key>8D9334278B3158B1E3E19FC827A43FD518C0B491</key>
 		<string>https://bitbucket.org/ewt_dongjian/tsmedicine.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>TSMedicine.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8D9334278B3158B1E3E19FC827A43FD518C0B491</key>
+		<key>4159174788E55AA9A23B4546C99E9FAF0F8CA5EB</key>
 		<string>..</string>
+		<key>8D9334278B3158B1E3E19FC827A43FD518C0B491</key>
+		<string>../../tsmedicine</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://bitbucket.org/ewt_dongjian/tsmedicine.git</string>
+	<string>https://github.com/zf31901/TSMedicine.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8D9334278B3158B1E3E19FC827A43FD518C0B491</string>
+	<string>4159174788E55AA9A23B4546C99E9FAF0F8CA5EB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4159174788E55AA9A23B4546C99E9FAF0F8CA5EB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E8%B5%A0%E8%8D%AFapp</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

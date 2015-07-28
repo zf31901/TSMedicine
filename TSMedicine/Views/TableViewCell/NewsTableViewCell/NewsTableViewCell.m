@@ -12,7 +12,7 @@
 
 - (void)update
 {
-     self.backgroundColor = self.cellData[@"color"];
+    self.backgroundColor = self.cellData[@"color"];
     self.newlab.text = self.cellData[@"newlab"];
     self.fromLab.text = self.cellData[@"fromLab"];
     self.dataTimelab.text = self.cellData[@"dataTimelab"];
