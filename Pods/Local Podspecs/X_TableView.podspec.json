@@ -1,0 +1,23 @@
+{
+  "name": "X_TableView",
+  "version": "0.11",
+  "summary": "xib cell",
+  "homepage": "https://github.com/fc01",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "fc01": "910677221@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/fc01/X_TableView.git",
+    "tag": "0.11"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "X_TableView/**/*.{h,m}",
+  "frameworks": "UIKit",
+  "requires_arc": true
+}

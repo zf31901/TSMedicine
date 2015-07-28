@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AskForCell" id="KGk-i7-Jjw" customClass="AskForCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-VU-Gg2">
+                        <rect key="frame" x="12" y="8" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow-fight16x25_gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="NpX-rf-eLo">
+                        <rect key="frame" x="300" y="14" width="8" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="P0q-jf-AAg"/>
+                            <constraint firstAttribute="width" constant="8" id="wdx-iM-L9i"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdI-sG-Egd">
+                        <rect key="frame" x="70" y="12" width="216" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Edg-VU-Gg2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="66L-th-Hc3"/>
+                    <constraint firstItem="NpX-rf-eLo" firstAttribute="leading" secondItem="tdI-sG-Egd" secondAttribute="trailing" constant="10" id="7QK-kr-sxy"/>
+                    <constraint firstItem="tdI-sG-Egd" firstAttribute="leading" secondItem="Edg-VU-Gg2" secondAttribute="trailing" constant="16" id="amF-lJ-3Ct"/>
+                    <constraint firstAttribute="centerY" secondItem="Edg-VU-Gg2" secondAttribute="centerY" id="fRm-NZ-LUd"/>
+                    <constraint firstAttribute="centerY" secondItem="tdI-sG-Egd" secondAttribute="centerY" id="mBx-14-jwK"/>
+                    <constraint firstAttribute="centerY" secondItem="NpX-rf-eLo" secondAttribute="centerY" id="uxd-jT-2cj"/>
+                    <constraint firstAttribute="trailing" secondItem="NpX-rf-eLo" secondAttribute="trailing" constant="12" id="w6x-ll-Eo0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="askFor_nameLab" destination="Edg-VU-Gg2" id="wRf-gN-Z73"/>
+                <outlet property="askFor_rightImg" destination="NpX-rf-eLo" id="puN-LS-5Np"/>
+                <outlet property="askfor_textField" destination="tdI-sG-Egd" id="Xbb-RF-kdU"/>
+            </connections>
+            <point key="canvasLocation" x="140" y="148"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow-fight16x25_gray.png" width="16" height="25"/>
+    </resources>
+</document>

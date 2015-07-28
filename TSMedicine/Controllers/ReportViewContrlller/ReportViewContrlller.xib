@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportViewContrlller">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="举报说明" translatesAutoresizingMaskIntoConstraints="NO" id="uuT-OR-r5p">
+                    <rect key="frame" x="0.0" y="20" width="375" height="120"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="nay-Mz-lq6"/>
+                    </constraints>
+                    <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="提示：若该患者不是您的病患，请举报给我们，谢谢！" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfR-qW-4q7">
+                    <rect key="frame" x="12" y="148" width="349" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="uuT-OR-r5p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8nR-MR-5zY"/>
+                <constraint firstAttribute="trailing" secondItem="uuT-OR-r5p" secondAttribute="trailing" id="KPc-rV-Hwv"/>
+                <constraint firstItem="uuT-OR-r5p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="YAj-Gs-us7"/>
+                <constraint firstItem="pfR-qW-4q7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="YiT-zN-6cM"/>
+                <constraint firstAttribute="trailing" secondItem="pfR-qW-4q7" secondAttribute="trailing" constant="12" id="ile-v2-vHv"/>
+                <constraint firstItem="pfR-qW-4q7" firstAttribute="top" secondItem="uuT-OR-r5p" secondAttribute="bottom" constant="8" id="vc8-CR-jPa"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="18.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

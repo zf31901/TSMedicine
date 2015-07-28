@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MyTSMListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="appl40.png" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-dF-kTL">
+                        <rect key="frame" x="12" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="lFP-Pb-IGU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="我的申请" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-2B-2Da">
+                        <rect key="frame" x="44" y="13" width="129" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-fight16x25_gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="d75-RC-HfW">
+                        <rect key="frame" x="300" y="15" width="8" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="bZQ-gL-xqA"/>
+                            <constraint firstAttribute="width" constant="8" id="tpL-K0-RRZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au9-g7-xQL">
+                        <rect key="frame" x="270" y="14" width="18" height="18"/>
+                        <color key="backgroundColor" red="1" green="0.3243613139" blue="0.15311359490000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="18" id="STk-wl-3en"/>
+                            <constraint firstAttribute="height" constant="18" id="kZA-S6-OSD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="Rde-2B-2Da" secondAttribute="centerY" id="7Kb-Ji-vRV"/>
+                    <constraint firstAttribute="centerY" secondItem="au9-g7-xQL" secondAttribute="centerY" id="Nua-eE-M8P"/>
+                    <constraint firstAttribute="trailing" secondItem="d75-RC-HfW" secondAttribute="trailing" constant="12" id="X92-yT-Fih"/>
+                    <constraint firstItem="FvN-dF-kTL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="gY9-g8-5fy"/>
+                    <constraint firstItem="d75-RC-HfW" firstAttribute="leading" secondItem="au9-g7-xQL" secondAttribute="trailing" constant="12" id="oQJ-e3-xDb"/>
+                    <constraint firstAttribute="bottom" secondItem="FvN-dF-kTL" secondAttribute="bottom" constant="12" id="pgz-GJ-4qA"/>
+                    <constraint firstItem="Rde-2B-2Da" firstAttribute="leading" secondItem="FvN-dF-kTL" secondAttribute="trailing" constant="12" id="qsX-YA-dTf"/>
+                    <constraint firstAttribute="centerY" secondItem="d75-RC-HfW" secondAttribute="centerY" id="rFe-K7-Q2e"/>
+                    <constraint firstItem="Rde-2B-2Da" firstAttribute="leading" secondItem="FvN-dF-kTL" secondAttribute="trailing" constant="12" id="rL3-fU-1QF"/>
+                    <constraint firstItem="FvN-dF-kTL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="uAH-xR-rz1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="myList_imgView" destination="FvN-dF-kTL" id="MfY-o0-fVI"/>
+                <outlet property="myList_redLab" destination="au9-g7-xQL" id="b0a-io-BUC"/>
+                <outlet property="myList_textlab" destination="Rde-2B-2Da" id="k19-eB-kXx"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="178"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="appl40.png" width="20" height="20"/>
+        <image name="arrow-fight16x25_gray.png" width="16" height="25"/>
+    </resources>
+</document>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AskForDonationViewController">
+            <connections>
+                <outlet property="askForDonation_nextpageBtn" destination="wye-d6-mPv" id="OCM-EZ-4Ri"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAq-ja-pXu">
+                    <rect key="frame" x="0.0" y="60" width="414" height="400"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apply160.png" translatesAutoresizingMaskIntoConstraints="NO" id="kSG-Om-ASX">
+                            <rect key="frame" x="167" y="0.0" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="dO4-1z-gVR"/>
+                                <constraint firstAttribute="height" constant="80" id="dnz-JU-5QD"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="只有患者才能申请捐助哦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHa-l7-qqM">
+                            <rect key="frame" x="58" y="100" width="258" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wye-d6-mPv">
+                            <rect key="frame" x="109" y="153" width="160" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="160" id="5OK-pt-JES"/>
+                                <constraint firstAttribute="height" constant="35" id="RET-GZ-dui"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="返回项目详情">
+                                <color key="titleColor" red="0.54117647058823526" green="0.34509803921568627" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="kSG-Om-ASX" secondAttribute="centerX" id="Ds7-NA-r8d"/>
+                        <constraint firstItem="kSG-Om-ASX" firstAttribute="top" secondItem="xAq-ja-pXu" secondAttribute="top" id="XGV-6j-bCz"/>
+                        <constraint firstAttribute="centerX" secondItem="wye-d6-mPv" secondAttribute="centerX" id="axf-Lk-zKk"/>
+                        <constraint firstItem="wye-d6-mPv" firstAttribute="top" secondItem="XHa-l7-qqM" secondAttribute="bottom" constant="32" id="h9X-zj-HJc"/>
+                        <constraint firstItem="XHa-l7-qqM" firstAttribute="top" secondItem="kSG-Om-ASX" secondAttribute="bottom" constant="20" id="iKW-bD-xhn"/>
+                        <constraint firstAttribute="centerX" secondItem="XHa-l7-qqM" secondAttribute="centerX" id="m7S-CQ-4MQ"/>
+                        <constraint firstAttribute="height" constant="400" id="nd6-uC-3kR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xAq-ja-pXu" secondAttribute="trailing" id="CNC-Gk-qAz"/>
+                <constraint firstItem="xAq-ja-pXu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="eOZ-hF-Frd"/>
+                <constraint firstItem="xAq-ja-pXu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xS0-Kx-F9y"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <point key="canvasLocation" x="-70.5" y="314.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="apply160.png" width="80" height="80"/>
+    </resources>
+</document>

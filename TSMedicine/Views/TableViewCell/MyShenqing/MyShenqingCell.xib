@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MyShenqingCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="News50_press.png" translatesAutoresizingMaskIntoConstraints="NO" id="osn-Tq-4cM">
+                        <rect key="frame" x="12" y="13" width="90" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="Uor-MQ-tfR"/>
+                            <constraint firstAttribute="height" constant="60" id="tYx-if-UPf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="项目一申请" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amf-eR-EpW">
+                        <rect key="frame" x="110" y="13" width="200" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2015-05-21 02:32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-dl-ugH">
+                        <rect key="frame" x="110" y="43" width="131" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAE-Un-Vl2">
+                        <rect key="frame" x="242" y="45" width="70" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <state key="normal" title="等待申请">
+                            <color key="titleColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="osn-Tq-4cM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="2AF-bW-4oW"/>
+                    <constraint firstItem="8Bx-dl-ugH" firstAttribute="leading" secondItem="osn-Tq-4cM" secondAttribute="trailing" constant="8" id="7a1-00-XcL"/>
+                    <constraint firstItem="amf-eR-EpW" firstAttribute="leading" secondItem="osn-Tq-4cM" secondAttribute="trailing" constant="8" id="G7C-10-Yyw"/>
+                    <constraint firstAttribute="bottom" secondItem="osn-Tq-4cM" secondAttribute="bottom" constant="11" id="Jyj-gs-jdo"/>
+                    <constraint firstItem="osn-Tq-4cM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="UBE-Cc-gAO"/>
+                    <constraint firstItem="8Bx-dl-ugH" firstAttribute="top" secondItem="amf-eR-EpW" secondAttribute="bottom" constant="8" id="Xzk-RI-OeC"/>
+                    <constraint firstItem="amf-eR-EpW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Z4g-6e-CYN"/>
+                    <constraint firstAttribute="trailing" secondItem="amf-eR-EpW" secondAttribute="trailing" constant="10" id="Zyb-tX-SF0"/>
+                    <constraint firstAttribute="trailing" secondItem="jAE-Un-Vl2" secondAttribute="trailing" constant="8" id="ebU-CZ-aTh"/>
+                    <constraint firstItem="jAE-Un-Vl2" firstAttribute="centerY" secondItem="8Bx-dl-ugH" secondAttribute="centerY" id="x46-pG-acp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgView" destination="osn-Tq-4cM" id="lFp-51-d6l"/>
+                <outlet property="timelab" destination="8Bx-dl-ugH" id="kbL-ax-SeW"/>
+                <outlet property="titleLb" destination="amf-eR-EpW" id="0Lg-TE-cBw"/>
+                <outlet property="waitBtn" destination="jAE-Un-Vl2" id="NQc-kb-fMR"/>
+            </connections>
+            <point key="canvasLocation" x="268" y="199"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="News50_press.png" width="25" height="25"/>
+    </resources>
+</document>

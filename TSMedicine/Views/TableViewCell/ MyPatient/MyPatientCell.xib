@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPatientCell" rowHeight="60" id="KGk-i7-Jjw" customClass="MyPatientCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="张三" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ql-fn-BEY">
+                        <rect key="frame" x="10" y="13" width="42" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="m1Y-DI-Wpq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="手机  15993227896" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQS-R5-cvO">
+                        <rect key="frame" x="10" y="34" width="161" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="wLh-Br-AiS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="已举报" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ze-We-Zc4">
+                        <rect key="frame" x="254" y="33" width="56" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Oe9-kq-1gd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="2Ze-We-Zc4" secondAttribute="bottom" constant="11" id="1sa-Nm-pSl"/>
+                    <constraint firstItem="9Ql-fn-BEY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="5W9-OG-5RI"/>
+                    <constraint firstItem="9Ql-fn-BEY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Jli-9K-G04"/>
+                    <constraint firstAttribute="trailing" secondItem="2Ze-We-Zc4" secondAttribute="trailing" constant="10" id="VmB-jq-igS"/>
+                    <constraint firstAttribute="bottom" secondItem="MQS-R5-cvO" secondAttribute="bottom" constant="12" id="c1h-mr-YZ2"/>
+                    <constraint firstItem="MQS-R5-cvO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="jMF-pX-TnU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="patient_nameLab" destination="9Ql-fn-BEY" id="ScJ-n2-ycf"/>
+                <outlet property="patient_phoneNumLab" destination="MQS-R5-cvO" id="M9Z-tE-sLA"/>
+                <outlet property="patient_reportLab" destination="2Ze-We-Zc4" id="hZE-lQ-ZRo"/>
+            </connections>
+            <point key="canvasLocation" x="281" y="164"/>
+        </tableViewCell>
+    </objects>
+</document>
