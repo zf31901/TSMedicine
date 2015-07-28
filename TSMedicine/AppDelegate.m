@@ -22,6 +22,7 @@
     self.window.rootViewController = [YYTabBarViewController initIalizeTab];
     [self.window makeKeyAndVisible];
     
+    
     return YES;
 }
 
