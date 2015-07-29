@@ -40,12 +40,12 @@
             
             NSDictionary *rqDic = (NSDictionary *)responseObject;
             
-            if ([rqDic[@"state"] boolValue]) {
-                 NSLog(@"rqdic------>>%@",rqDic);
-                NSArray *dataArr_login = (NSArray *)[rqDic[@"data"] objectFromJSONString];
-                NSLog(@"dataArr_login = %@",dataArr_login);
-                
-            }
+//            if ([rqDic[@"state"] boolValue]) {
+//                 NSLog(@"rqdic------>>%@",rqDic);
+//                NSArray *dataArr_login = (NSArray *)[rqDic[@"data"] objectFromJSONString];
+//                NSLog(@"dataArr_login = %@",dataArr_login);
+//                
+//            }
             
 //            NSLog(@"responseObject == %@",responseObject);
             
