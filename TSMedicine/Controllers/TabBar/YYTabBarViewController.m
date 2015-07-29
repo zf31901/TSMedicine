@@ -19,8 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
+
 static YYTabBarViewController *yyTabBarVC = nil;
 + (instancetype)initIalizeTab
 {
@@ -32,8 +33,8 @@ static YYTabBarViewController *yyTabBarVC = nil;
     yyTabBarVC.viewControllers= [yyTabBarVC createControllerArr];
     return yyTabBarVC;
 }
-#pragma mark 非公开方法
 
+#pragma mark 非公开方法
 - (NSArray *)createControllerArr
 {
     return @[
@@ -54,6 +55,7 @@ static YYTabBarViewController *yyTabBarVC = nil;
                                                        NSFontAttributeName: [UIFont systemFontOfSize:16.0f]} forState:UIControlStateSelected];
     return navController;
 }
+
 #pragma mark  -显示隐藏tabBar
 + (void)setTabBarHiddenOrShow:(BOOL)isShow  isAnimation:(BOOL)isAnimation andDirection:(YYTabBarAnimationDirection)direction
 {

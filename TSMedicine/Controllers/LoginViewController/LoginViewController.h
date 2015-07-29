@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : BaseViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *nikeName;
 
 @property (weak, nonatomic) IBOutlet UITextField *pawssWorld;

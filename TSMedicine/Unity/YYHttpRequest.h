@@ -8,20 +8,26 @@
 
 #import "AFHTTPRequestOperationManager.h"
 #import "AFNetworkReachabilityManager.h"
+
+#define HttpRequest [YYHttpRequest shareInstance]
+
 #define DefineTimeout           20.0
 
 #define OfficialEnvironment
 #ifdef OfficialEnvironment
-#define BaseDemain          @"http://app.aixinland.cn"
-#define MemberBaseDemain    @"http://app.aixinland.cn"
-#define ApiKey              @"100000001"
+#define BaseDemain          @"http://myapi.aixinland.cn"
+#define MemberBaseDemain    @"http://myapi.aixinland.cn"
+#define ApiKey              @"900000001"
 #define UUPAY_CODE          @"00"       //正式环境
+
 #else
 #define BaseDemain          @"http://app.aixinland.cn"
 #define MemberBaseDemain    @"http://app.aixinland.cn"
 #define ApiKey              @"100000002"
 #define UUPAY_CODE          @"01"       //开发环境
 #endif
+
+
 @interface YYHttpRequest : AFHTTPRequestOperationManager
 + (instancetype)shareInstance;
 + (instancetype)shareInstance_myapi;
@@ -54,6 +60,7 @@
              success:(void (^)(AFHTTPRequestOperation *operation,id responseObj))success
              failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))failure;
 
+
 //POST
 - (void)POSTURLString:(NSString *)URLString
            parameters:(NSDictionary *)parameters
@@ -72,6 +79,8 @@
               success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+
+
 //PUT
 - (void )PUTURLString:(NSString *)URLString
            parameters:(NSDictionary *)parameters
@@ -83,6 +92,8 @@
            parameters:(NSDictionary *)parameters
               success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+
 
 //DELETE
 - (void )DELETEURLString:(NSString *)URLString

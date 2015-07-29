@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface YYPhotoPicker : NSObject<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
-@property(nonatomic,strong)UIViewController *tempViewController;
-@property(nonatomic,copy)void (^imageDidSelect)(UIImage *);
+
+@property(nonatomic,strong) UIViewController *tempViewController;
+@property(nonatomic,copy) void (^imageDidSelect)(UIImage *);
+
+
 +(void)showPhotoInController:(UIViewController *)view
            withCallBack:(void (^)(UIImage *image))doSomeThing;
 @end

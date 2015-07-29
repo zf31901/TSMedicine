@@ -43,12 +43,15 @@
 //    dic = [self appendRoutineParameterTo:dic];
     
 //    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:nil];
+    
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:nil error:nil];
     [request setTimeoutInterval:timeout];
+    
 //    request = [self setCacheMechanismWith:request];
+    
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self.operationQueue addOperation:operation];
-    NSLog(@"GET:%@",request.URL);
+    NSLog(@"GET === %@",request.URL);
 }
 
 - (void)GETURLString:(NSString *)URLString
@@ -97,10 +100,11 @@
     
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:dic];
     [request setTimeoutInterval:timeout];
+    
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self.operationQueue addOperation:operation];
     
-    NSLog(@"POST:%@",[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]);
+    NSLog(@"POST ==== %@",[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]);
 }
 
 - (void)POSTURLString:(NSString *)URLString

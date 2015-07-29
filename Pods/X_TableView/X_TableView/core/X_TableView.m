@@ -108,15 +108,11 @@
     _commitEditingBlock = block;
 }
 
-
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _xDataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     
     NSMutableDictionary* cellData = _xDataSource[indexPath.row];
     NSString* tagName = cellData[kCellTag];
@@ -151,9 +147,6 @@
     }
     return [NSString stringWithFormat:@"%@%@Cell",ch,str];
 }
-
-
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

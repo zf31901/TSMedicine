@@ -29,6 +29,7 @@
                 <constraint firstAttribute="bottom" secondItem="jOY-fT-Ixm" secondAttribute="bottom" id="dXV-OS-8Ez"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="-31.5" y="160.5"/>
         </view>
     </objects>
 </document>

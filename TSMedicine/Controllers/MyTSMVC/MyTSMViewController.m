@@ -17,6 +17,7 @@
 #import "LoginViewController.h"
 
 @interface MyTSMViewController ()
+
 @property (weak, nonatomic) IBOutlet X_TableView *tableView;
 
 @end
@@ -28,8 +29,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+   
     self.navigationController.navigationBarHidden  = YES;
+  
+    
     WEAKSELF
 //    NSArray *titleArr = @[@"我的申请",@"我的提问",@"系统通知",@"设置"];
     NSArray *titleArr = @[@"我的患者",@"我的培训",@"我的问答",@"系统通知",@"设置"];
@@ -128,36 +131,42 @@
                       } mutableCopy]];
     
     self.tableView.xDataSource = arr;
+    
     [arr x_update:@"MyTSMListCell" where:@{@"textlab":@"我的患者"} set:@{kCellDidSelect:@"myPatientVC"}];
     [self.tableView addCellEventListenerWithName:@"myPatientVC" block:^(X_TableViewCell *cell) {
         MyPatientViewController *myPatientVC = [MyPatientViewController new];
         myPatientVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:myPatientVC animated:YES];
     }];
+    
     [arr x_update:@"MyTSMListCell" where:@{@"textlab":@"我的培训"} set:@{kCellDidSelect:@"MyShenqingVC"}];
     [self.tableView addCellEventListenerWithName:@"MyShenqingVC" block:^(X_TableViewCell *cell) {
         TrainViewController *trainVC = [TrainViewController new];
         trainVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:trainVC animated:YES];
     }];
+    
     [arr x_update:@"MyTSMListCell" where:@{@"textlab":@"我的问答"} set:@{kCellDidSelect:@"answerVC"}];
     [self.tableView addCellEventListenerWithName:@"answerVC" block:^(X_TableViewCell *cell) {
         MyShenqingViewContrlller *myShenqingVC = [MyShenqingViewContrlller new];
         myShenqingVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:myShenqingVC animated:YES];
     }];
+    
     [self.tableView addCellEventListenerWithName:@"setMyTSMHeader_photoImg" block:^(X_TableViewCell *cell) {
         [YYPhotoPicker showPhotoInController:self withCallBack:^(UIImage *image) {
             [cell.cellData setObject:image forKey:@"myTSMHeader_photoImg"];
             [weakSelf.tableView reloadData];
         }];
     }];
+    
     [arr x_update:@"MyTSMListCell" where:@{@"textlab":@"系统通知"} set:@{kCellDidSelect:@"push"}];
     [self.tableView addCellEventListenerWithName:@"push" block:^(X_TableViewCell *cell) {
         PhoneVerificationCodeViewController *phone = [PhoneVerificationCodeViewController new];
         phone.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:phone animated:YES];
     }];
+    
     [self.tableView addCellEventListenerWithName:@"loginBtn" block:^(X_TableViewCell *cell) {
         LoginViewController *loginVC = [LoginViewController new];
         loginVC.hidesBottomBarWhenPushed = YES;
@@ -165,6 +174,7 @@
         [self.navigationController pushViewController:loginVC animated:YES];
        
     }];
+    
      [arr x_update:@"MyTSMListCell" where:@{@"textlab":@"设置"} set:@{kCellDidSelect:@"setMyTSM"}];
     [self.tableView addCellEventListenerWithName:@"setMyTSM" block:^(X_TableViewCell *cell) {
         SetMyTSMViewController *setMyTSMVC = [SetMyTSMViewController new];
@@ -172,15 +182,19 @@
         
         [self.navigationController pushViewController:setMyTSMVC animated:YES];
     }];
-     
-
-
+    
+ 
+    
+    
+    
     /*
     [self.tableView addCellEventListenerWithName:@"setMyTSMHeader_photoImg" block:^(X_TableViewCell *cell) {
         [arr x_update:@"MyTSMHeaderCell" where:@{@"h":@"154"} set:@{@"myTSMHeader_photoImg":RGB(32, 164, 82),@"sigOutBtnEnagled":@"true",}];
         [self.tableView  reloadData];
         
     }];*/
+    
+
     
 }
 
@@ -189,14 +203,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
