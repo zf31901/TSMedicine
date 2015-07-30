@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MyTSMHeaderCell : X_TableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *myTSMHeader_photoImg;
 @property (weak, nonatomic) IBOutlet UIButton *myTSMHeader_nikeBtn;
 

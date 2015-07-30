@@ -47,9 +47,9 @@
                 newModel.a_From = [dataDic objectForKey:@"a_From"];
                 newModel.a_AddDate = [dataDic objectForKey:@"a_AddDate"];
                 [testArr addObject:newModel];
+        
+//                NSLog(@"rqdic----%@",dataDic);
                 
-
-                NSLog(@"rqdic----%@",dataDic);
                 [arr addObject:[@{
                                   kCellTag:@"NewsTableViewCell",
                                   kCellDidSelect:@"NewsTableView",

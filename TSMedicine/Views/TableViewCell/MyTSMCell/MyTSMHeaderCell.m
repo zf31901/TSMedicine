@@ -12,7 +12,7 @@
 
 -(void)update{
     self.backgroundColor = self.cellData[@"color"];
-    self.myTSMHeader_photoImg.layer.borderWidth = 2;
+    self.myTSMHeader_photoImg.layer.borderWidth = 5;
     self.myTSMHeader_photoImg.layer.borderColor = RGBA(255, 255, 255, 0.2).CGColor;
     self.myTSMHeader_photoImg.layer.cornerRadius = self.myTSMHeader_photoImg.width/2;
     self.myTSMHeader_photoImg.layer.masksToBounds = YES;

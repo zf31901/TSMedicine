@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "RegisterViewController.h"
+
 @interface LoginViewController ()
 
 @end
@@ -15,73 +17,115 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
+    [self setNavView];
+    
+}
+
+-(void)setNavView
+{
     self.navigationController.navigationBarHidden  = NO;
     self.title = @"登录";
 }
+
+#pragma mark -------登录-------------
+- (IBAction)loginBtn:(id)sender {
+    
+    if (![self cheakText]) {
+        return;
+    }
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:_nikeName.text forKey:@"u"];
+    [parameters setObject:_pawssWorld.text forKey:@"pwd"];
+    
+    [HttpRequest POSTURLString:@"user/login" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSDictionary *rqDic = (NSDictionary *)responseObject;
+        
+        if ([rqDic[@"state"] boolValue]) {
+//            NSLog(@"rqdic------>>%@",rqDic);
+            NSArray *dataArr_login = (NSArray *)[rqDic[@"data"] objectFromJSONString];
+            NSDictionary *dic_login = (NSDictionary *)dataArr_login;
+            NSLog(@"dic_login = %@",dic_login);
+            
+            NSDictionary *param = @{@"u": _nikeName.text, @"clientkey": dic_login[@"clientkey"]};
+            [self loadUserInfoDataWith:param];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error = %@",error);
+    }];
+    
+    [self hidKeyBoard];
+}
+
+-(void)loadUserInfoDataWith:(NSDictionary *)dic
+{
+    
+    [HttpRequest GETURLString:@"User/info" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
+        
+        NSLog(@"responseObj == %@",responseObj);
+        NSLog(@"msg == %@",responseObj[@"msg"]);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"error = %@",error);
+    }];
+    
+}
+
+#pragma mark --------------注册---------------
+- (IBAction)regainBtn:(id)sender {
+    
+    RegisterViewController *registerVC = [[RegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVC animated:YES];
+}
+
+-(BOOL)cheakText
+{
+    if (_nikeName.text.length == 0) {
+        [self showAlertViewWithTitle:@"用户名不能为空" andDelay:1.5];
+        return NO;
+    }
+    if (_pawssWorld.text.length == 0) {
+        [self showAlertViewWithTitle:@"密码不能为空" andDelay:1.5];
+        return NO;
+    }
+    return YES;
+}
+
+-(void)showAlertViewWithTitle:(NSString *)title andDelay:(CGFloat)time
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:title delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+    [alert show];
+    [self performSelector:@selector(removeAlert:) withObject:alert afterDelay:time];
+    
+}
+-(void)removeAlert:(UIAlertView *)alertView
+{
+    [alertView removeFromSuperview];
+    alertView = nil;
+}
+
+-(void)hidKeyBoard
+{
+    [WITool hideAllKeyBoard];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self hidKeyBoard];
+}
+
 - (void)back
 {
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBarHidden  = YES;
 }
 
-- (IBAction)loginBtn:(id)sender {
-    
-
-    
-    if (self.nikeName.text != nil && self.pawssWorld.text !=nil)
-    {
-        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-        [parameters setObject:_nikeName.text forKey:@"u"];
-        [parameters setObject:_pawssWorld.text forKey:@"pwd"];
-        
-        [HttpRequest POSTURLString:@"user/login" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            
-            NSDictionary *rqDic = (NSDictionary *)responseObject;
-            
-//            if ([rqDic[@"state"] boolValue]) {
-//                 NSLog(@"rqdic------>>%@",rqDic);
-//                NSArray *dataArr_login = (NSArray *)[rqDic[@"data"] objectFromJSONString];
-//                NSLog(@"dataArr_login = %@",dataArr_login);
-//                
-//            }
-            
-//            NSLog(@"responseObject == %@",responseObject);
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
-//            NSLog(@"error = %@",error);
-            
-        }];
-        
-    }else
-    {
-        
-        
-    }
-}
 
 
-
-#pragma mark --------------注册---------------
-- (IBAction)regainBtn:(id)sender {
-    
-    YYHttpRequest *hq = [YYHttpRequest shareInstance];
-    [hq GETURLString:@"http://app.aixinland.cn/api/news/List?pageid=1&pagesize=2" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObj) {
-        NSDictionary *rqDic = (NSDictionary *)responseObj;
-        
-//        NSLog(@"rqdic=======%@",responseObj);
-//        NSLog(@"message == %@",responseObj[@"message"]);
-
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"%@ , %@",operation,error);
-    }];
-
-
-}
 
 
 

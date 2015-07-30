@@ -19,8 +19,10 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [YYTabBarViewController initIalizeTab];
     [self.window makeKeyAndVisible];
+    
+    self.window.rootViewController = [YYTabBarViewController initIalizeTab];
+   
     
     return YES;
 }
