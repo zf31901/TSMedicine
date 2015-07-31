@@ -81,8 +81,7 @@ static YYTabBarViewController *yyTabBarVC = nil;
         }
     }];
     
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning {

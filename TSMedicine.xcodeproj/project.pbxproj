@@ -79,6 +79,8 @@
 		1692BBC01B426E330094E7A0 /* PhoneNumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1692BBBE1B426E330094E7A0 /* PhoneNumCell.xib */; };
 		1692BBC41B4275400094E7A0 /* OnlyTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692BBC21B4275400094E7A0 /* OnlyTextFieldCell.m */; };
 		1692BBC51B4275400094E7A0 /* OnlyTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1692BBC31B4275400094E7A0 /* OnlyTextFieldCell.xib */; };
+		16B084FD1B6B5506004512E6 /* RegisterNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B084FB1B6B5506004512E6 /* RegisterNextViewController.m */; };
+		16B084FE1B6B5506004512E6 /* RegisterNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16B084FC1B6B5506004512E6 /* RegisterNextViewController.xib */; };
 		16B909941B281F6600211892 /* DonationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B909921B281F6600211892 /* DonationViewController.m */; };
 		16B909951B281F6600211892 /* DonationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16B909931B281F6600211892 /* DonationViewController.xib */; };
 		16B909991B281F6E00211892 /* MyTSMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B909971B281F6E00211892 /* MyTSMViewController.m */; };
@@ -272,6 +274,9 @@
 		1692BBC11B4275400094E7A0 /* OnlyTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlyTextFieldCell.h; sourceTree = "<group>"; };
 		1692BBC21B4275400094E7A0 /* OnlyTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlyTextFieldCell.m; sourceTree = "<group>"; };
 		1692BBC31B4275400094E7A0 /* OnlyTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlyTextFieldCell.xib; sourceTree = "<group>"; };
+		16B084FA1B6B5506004512E6 /* RegisterNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNextViewController.h; sourceTree = "<group>"; };
+		16B084FB1B6B5506004512E6 /* RegisterNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNextViewController.m; sourceTree = "<group>"; };
+		16B084FC1B6B5506004512E6 /* RegisterNextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterNextViewController.xib; sourceTree = "<group>"; };
 		16B909911B281F6600211892 /* DonationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonationViewController.h; sourceTree = "<group>"; };
 		16B909921B281F6600211892 /* DonationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonationViewController.m; sourceTree = "<group>"; };
 		16B909931B281F6600211892 /* DonationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonationViewController.xib; sourceTree = "<group>"; };
@@ -512,6 +517,9 @@
 				16415CD41B6A1E0C00466A03 /* RegisterViewController.h */,
 				16415CD51B6A1E0C00466A03 /* RegisterViewController.m */,
 				16415CD61B6A1E0C00466A03 /* RegisterViewController.xib */,
+				16B084FA1B6B5506004512E6 /* RegisterNextViewController.h */,
+				16B084FB1B6B5506004512E6 /* RegisterNextViewController.m */,
+				16B084FC1B6B5506004512E6 /* RegisterNextViewController.xib */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1124,6 +1132,7 @@
 				16C3F99C1B25711C0040D80C /* News50_nomal@2X.png in Resources */,
 				168369611B2AD3C000A78898 /* PersonalDataCell.xib in Resources */,
 				16C3F9B91B25711C0040D80C /* training40@3x.png in Resources */,
+				16B084FE1B6B5506004512E6 /* RegisterNextViewController.xib in Resources */,
 				16C3F9861B25711C0040D80C /* appl40@3x.png in Resources */,
 				1692BBC51B4275400094E7A0 /* OnlyTextFieldCell.xib in Resources */,
 				16C3F9931B25711C0040D80C /* choose40_selected.png in Resources */,
@@ -1201,6 +1210,7 @@
 				168369651B2AD5E800A78898 /* PersonalCell.m in Sources */,
 				168369461B2AB1B800A78898 /* SetMyTSMViewController.m in Sources */,
 				161263611B3D034B00EAEDE6 /* MyShenqingViewContrlller.m in Sources */,
+				16B084FD1B6B5506004512E6 /* RegisterNextViewController.m in Sources */,
 				169071431B34088700A4CD21 /* DonationCell.m in Sources */,
 				168561821B4A8A5C00F47F93 /* LoginViewController.m in Sources */,
 				165EB4761B298F440070D1F8 /* ThinLineCell.m in Sources */,
