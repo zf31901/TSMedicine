@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "RegisterNextViewController.h"
 
 @interface RegisterViewController ()
 
@@ -35,19 +36,33 @@
     _verifyBtn.layer.borderColor = RGBA(0, 0, 0, 0.2).CGColor;
     
     _nextBtn.layer.cornerRadius = 4.0;
+    [_nextBtn setBackgroundColor:CommonBgColor];
     
 }
 
 //获取验证码
 - (IBAction)getVerifyCodeBtnClick:(id)sender {
     
-    
+
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     [parameters setObject:_phoneNumbTF.text forKey:@"phone"];
-    [parameters setObject:@1 forKey:@"appid"];
-    [HttpRequest POSTURLString:@"User/register/sendverifycode" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    [HttpRequest GETURLString:@"/User/register/sendverifycode/" userCache:NO parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObj) {
         
-        NSLog(@"responseObject = %@",responseObject);
+        NSLog(@"responseObj === %@",responseObj);
+        
+         NSDictionary *rqDic = (NSDictionary *)responseObj;
+        
+//        NSLog(@"%d",[rqDic[@"state"] boolValue]);
+        
+        if ([rqDic[@"state"] boolValue]) {
+            
+            NSArray *dataArr = (NSArray *)[rqDic[@"data"] objectFromJSONString];
+            NSDictionary *dic = (NSDictionary *)dataArr;
+            
+            NSLog(@"dic ==== %@",dic);
+            
+        }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -61,8 +76,24 @@
 - (IBAction)nextBtnClick:(id)sender {
     
     
+    if (_phoneNumbTF.text.length > 0 && _verifyTF.text.length == 4) {
+        
+        RegisterNextViewController *nextRgster = [[RegisterNextViewController alloc] init];
+        [self.navigationController pushViewController:nextRgster animated:YES];
+    }
 }
 
+
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self hidKeyBoard];
+}
+-(void)hidKeyBoard
+{
+    [WITool hideAllKeyBoard];
+}
 
 - (void)back
 {

@@ -9,3 +9,5 @@
 
 
 
+#define CommonBgColor (UIColorFromRGB(0x915ce6))
+

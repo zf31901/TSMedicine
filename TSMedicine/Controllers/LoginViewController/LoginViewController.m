@@ -39,7 +39,7 @@
     [parameters setObject:_nikeName.text forKey:@"u"];
     [parameters setObject:_pawssWorld.text forKey:@"pwd"];
     
-    [HttpRequest POSTURLString:@"user/login" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [HttpRequest POSTURLString:@"/User/login/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSDictionary *rqDic = (NSDictionary *)responseObject;
         
@@ -60,10 +60,11 @@
     [self hidKeyBoard];
 }
 
+// 获取用户信息
 -(void)loadUserInfoDataWith:(NSDictionary *)dic
 {
     
-    [HttpRequest GETURLString:@"User/info" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
+    [HttpRequest GETURLString:@"/User/info/" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
         
         NSLog(@"responseObj == %@",responseObj);
         NSLog(@"msg == %@",responseObj[@"msg"]);
