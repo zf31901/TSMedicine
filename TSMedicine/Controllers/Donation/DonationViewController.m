@@ -20,31 +20,85 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"捐助项目";
     
-    NSArray *titleArr = @[@"性别",@"年龄",@"手机号",@"地址",@"街道"];
+    //NSArray *titleArr = @[@"性别",@"年龄",@"手机号",@"地址",@"街道"];
     NSMutableArray *arr=[[NSMutableArray alloc]init];
+    NSMutableArray *testArr = [NSMutableArray array];
     
-    
-
-    for (int i = 0; i < titleArr.count; i ++)
-    {
-
-        [arr addObject:[@{
-                          kCellTag:@"DonationCell",
-                          kCellDidSelect:@"DonationCell",
-                          @"titleLab":@"项目名称一",
-                          @"contentlab":@"适应概述内容适应概述内容",
-                          @"unitlab":@"发起单位：第三人民医院",
-                          @"imgView":@"NEWS50_PRESS",
-                          } mutableCopy]];
-        [arr addObject:[@{
-                          kCellTag:@"ThinLine",
-                          kCellDidSelect:@"f1",
-                          @"l":@"12",
-                          } mutableCopy]];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:2];
+    [dic setObject:@"1"              forKey:@"pageid"];
+    [dic setObject:@"3"      forKey:@"pagesize"];
+    YYHttpRequest *hq=[YYHttpRequest shareInstance];
+    [hq GETURLString:URL parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
         
-    }
+        NSLog(@"111111111%@",responseObj);
+        
+        if ([responseObj objectForKey:@"data"] !=nil) {
+            NSArray *dataArr =[responseObj objectForKey:@"data"];
+            
+            NSLog(@"222222%lu",(unsigned long)dataArr.count);
+            
+            for (int i = 0; i < dataArr.count; i++)
+            {
+                DetailModel *model=[[DetailModel alloc]init];
+                NSDictionary *dataDic = (NSDictionary *)[dataArr objectAtIndex:i];
+                
+                
+                model.pname=[dataDic objectForKey:@"pname"];
+                model.pjieshao=[dataDic objectForKey:@"pjieshao"];
+                model.pfaqidanwei=[dataDic objectForKey:@"pfaqidanwei"];
+                model.pimage=[dataDic  objectForKey:@"pimage"];
+                
+                [testArr addObject:model];
+                NSLog(@"dic12345----%@",dataDic);
+                
+                [arr addObject:[@{
+                                  kCellTag:@"DonationCell",
+                                  kCellDidSelect:@"DonationCell",
+                                  @"donation_titleLab":[dataDic objectForKey:@"pname"],
+                                  @"donation_contentlab":[dataDic objectForKey:@"pjieshao"],
+                                  @"donation_unitlab":[dataDic objectForKey:@"pfaqidanwei"],
+                                  @"donation_imgView":[dataDic  objectForKey:@"pimage"],
+                                  } mutableCopy]];
+                //            [arr addObject:[@{
+                //                              kCellTag:@"ThinLine",
+                //                              kCellDidSelect:@"f1",
+                //                              @"l":@"12",
+                //                              } mutableCopy]];
+                
+            }
+            self.tableView.xDataSource = arr;
+            
+            [self.tableView reloadData];
+            
+        }
+        [self lable];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        
+    }];
     
-    self.tableView.xDataSource = arr;
+    
+    //    AFHTTPRequestOperationManager*manger=[AFHTTPRequestOperationManager manager];
+    //    manger.responseSerializer = [AFHTTPResponseSerializer serializer];
+    //    [manger GET:URLLIST parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    //      NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+    //
+    //        DetailModel*model=[[DetailModel alloc]init];
+    //        
+    //        [model setValuesForKeysWithDictionary:dic];
+    //        
+    //        [arr addObject:model];
+    //        NSLog(@"=========%@",arr);
+    //        
+    //    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    //        
+    //    }];
+    //
+}
+
+-(void)lable{
+    
     WEAKSELF
     [self.tableView addCellEventListenerWithName:@"DonationCell" block:^(X_TableViewCell *cell) {
         
