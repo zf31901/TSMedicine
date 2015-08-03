@@ -28,8 +28,8 @@
 //#define DockHeight 91
 //#define NavHeight ([WIDevice getNavHeight])
 
-#define kScreenWidth  [WIDevice getScreenWidth]
-#define kScreenHeight [WIDevice getScreenHeight]
+#define ScreenWidth  [WIDevice getScreenWidth]
+#define ScreenHeight [WIDevice getScreenHeight]
 #define kOSVersion    [WIDevice getOSVersion]
 
 #define isIOS7        ([WIDevice getOSVersion] >= 7)

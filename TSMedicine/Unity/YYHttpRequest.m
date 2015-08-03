@@ -39,12 +39,12 @@
              success:(void (^)(AFHTTPRequestOperation *operation,id responseObj))success
              failure:(void (^)(AFHTTPRequestOperation *operation,NSError *error))failure
 {
-//    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:parameters];
-//    dic = [self appendRoutineParameterTo:dic];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    dic = [self appendRoutineParameterTo:dic];
     
 //    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:nil];
     
-    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:nil error:nil];
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:dic error:nil];
     [request setTimeoutInterval:timeout];
     
 //    request = [self setCacheMechanismWith:request];
@@ -105,6 +105,7 @@
     [self.operationQueue addOperation:operation];
     
     NSLog(@"POST ==== %@",[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]);
+//    NSLog(@"POST ==== %@",request.URL);
 }
 
 - (void)POSTURLString:(NSString *)URLString

@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "UserObj.h"
 
 @interface LoginViewController ()
 
@@ -35,22 +36,19 @@
         return;
     }
     
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [parameters setObject:_nikeName.text forKey:@"u"];
-    [parameters setObject:_pawssWorld.text forKey:@"pwd"];
+    NSDictionary *parameters = @{@"u": _nikeName.text, @"pwd": _pawssWorld.text};
     
-    [HttpRequest POSTURLString:@"/User/login/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    [HttpRequest_MyApi POSTURLString:@"/User/login/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *rqDic = (NSDictionary *)responseObject;
         
         if ([rqDic[@"state"] boolValue]) {
-//            NSLog(@"rqdic------>>%@",rqDic);
-            NSArray *dataArr_login = (NSArray *)[rqDic[@"data"] objectFromJSONString];
-            NSDictionary *dic_login = (NSDictionary *)dataArr_login;
-            NSLog(@"dic_login = %@",dic_login);
+//            NSLog(@"rqdic == %@",rqDic);
+            NSDictionary *dic_login = (NSDictionary *)[rqDic[@"data"] objectFromJSONString];
+//            NSLog(@"dic_login = %@",dic_login);
             
             NSDictionary *param = @{@"u": _nikeName.text, @"clientkey": dic_login[@"clientkey"]};
-            [self loadUserInfoDataWith:param];
+            //获取用户信息
+            [self loadUserInfoDataWithApiDic:param andLoginInfo:dic_login];
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -61,18 +59,52 @@
 }
 
 // 获取用户信息
--(void)loadUserInfoDataWith:(NSDictionary *)dic
+-(void)loadUserInfoDataWithApiDic:(NSDictionary *)param andLoginInfo:(NSDictionary *)dic_login
 {
     
-    [HttpRequest GETURLString:@"/User/info/" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
+    [HttpRequest_MyApi GETURLString:@"/User/info/" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObj) {
         
-        NSLog(@"responseObj == %@",responseObj);
-        NSLog(@"msg == %@",responseObj[@"msg"]);
+        NSDictionary *rqDic = (NSDictionary *)responseObj;
+        if ([rqDic[@"state"] boolValue]) {
+            NSDictionary *infoDic = (NSDictionary *)[rqDic[@"data"] objectFromJSONString];
+//            NSLog(@"infoDic === %@",infoDic)
+            
+            //保存用户信息
+            [self saveUserInfor:infoDic withLoginInfo:dic_login];
+        }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"error = %@",error);
     }];
+    
+}
+
+//保存用户信息
+-(void)saveUserInfor:(NSDictionary *)dic withLoginInfo:(NSDictionary *)dic_login
+{
+    UserObj *user = [[UserObj alloc] init];
+    
+    [user setUserName:dic[@"Mobile"]];
+    [user setPassword:_pawssWorld.text];
+    [user setIm:dic[@"UserLogin"]];
+    [user setPhone:dic[@"Mobile"]];
+    [user setClientkey:dic_login[@"clientkey"]];
+    [user setIsLogin:YES];
+    [user setNickName:dic[@"Nick"]];
+    [user setTrueName:dic[@"TrueName"]];
+    [user setSex:[dic[@"Sex"] boolValue]];
+    [user setHeadPic:dic[@"HeadPicture"]];
+    [user setEmail:dic[@"Email"]];
+    [user setEmailState:[dic[@"EmailState"] boolValue]];
+    [user setPhoneState:[dic[@"MobileState"] boolValue]];
+    [user setRegTime:dic[@"RegDateTime"]];
+    
+    [GlobalMethod saveObject:user withKey:USEROBJECT];
+    [GlobalMethod saveLoginInStatus:YES];
+    [GlobalMethod sharedInstance].isLogin = YES;
+    
+     [self.navigationController popViewControllerAnimated:YES];
     
 }
 
@@ -86,7 +118,7 @@
 -(BOOL)cheakText
 {
     if (_nikeName.text.length == 0) {
-        [self showAlertViewWithTitle:@"用户名不能为空" andDelay:1.5];
+        [self showAlertViewWithTitle:@"帐号不能为空" andDelay:1.5];
         return NO;
     }
     if (_pawssWorld.text.length == 0) {

@@ -11,8 +11,6 @@
 #import "TSAppDefine.h"
 #import "TSUtilsDefine.h"
 
-
-
 //base
 #import "YYTabBarViewController.h"
 #import "UIView+YYFrameEasy.h"
@@ -24,7 +22,20 @@
 //tools
 #import "WITool.h"
 #import "WIDevice.h"
+#import "GlobalVariable.h"
+#import "GlobalMethod.h"
+
+
+//baseView
+#import "WIBaseImageView.h"
+#import "WIBaseButton.h"
+#import "WIBaseLabel.h"
+
+//catetroy
+#import "NSString+autoResize.h"
+#import "UIView+ModifyFrame.h"
 
 
 //libs
 #import "JSONKit.h"
+#import "UIImageView+WebCache.h"

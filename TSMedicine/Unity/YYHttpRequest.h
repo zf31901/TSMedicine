@@ -9,7 +9,8 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "AFNetworkReachabilityManager.h"
 
-#define HttpRequest [YYHttpRequest shareInstance]
+#define HttpRequest         [YYHttpRequest shareInstance]
+#define HttpRequest_MyApi   [YYHttpRequest shareInstance_myapi]
 
 #define DefineTimeout           20.0
 
@@ -21,8 +22,8 @@
 #define UUPAY_CODE          @"00"       //正式环境
 
 #else
-#define BaseDemain          @"http://app.aixinland.cn"
-#define MemberBaseDemain    @"http://app.aixinland.cn"
+#define BaseDemain          @"http://myapi.aixinland.cn"
+#define MemberBaseDemain    @"http://myapi.aixinland.cn"
 #define ApiKey              @"100000002"
 #define UUPAY_CODE          @"01"       //开发环境
 #endif
