@@ -16,7 +16,7 @@
 
 
 #import "LoginViewController.h"
-//#import "MyTSMUserInfoViewController.h"
+#import "MyTSMUserInfoViewController.h"
 
 #import "MyHeaderView.h"
 #import "MyProModel.h"
@@ -43,7 +43,7 @@ NSString *const ProTableViewCell = @"MyProTableViewCell";
 {
     self.navigationController.navigationBarHidden  = YES;
     if ([GlobalMethod sharedInstance].isLogin){
-        [_headView.headImageView sd_setImageWithURL:[NSURL URLWithString:UserInfoData.headPic] placeholderImage:[UIImage imageNamed:@"默认头像80"] options:SDWebImageRefreshCached];
+        [_headView.headImageView sd_setImageWithURL:[NSURL URLWithString:UserInfoData.headPic] placeholderImage:[UIImage imageNamed:default_head] options:SDWebImageRefreshCached];
         _headView.nameLab.text = [NSString stringWithFormat:@"%@",UserInfoData.im];
         
         [self.view addSubview:self.tableView];
@@ -157,9 +157,9 @@ NSString *const ProTableViewCell = @"MyProTableViewCell";
     
     if ([GlobalMethod sharedInstance].isLogin) {
 
-//        MyTSMUserInfoViewController *infoVC = [[MyTSMUserInfoViewController alloc] init];
-//        infoVC.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:infoVC animated:YES];
+        MyTSMUserInfoViewController *infoVC = [[MyTSMUserInfoViewController alloc] init];
+        infoVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:infoVC animated:YES];
         
     }else{
         
