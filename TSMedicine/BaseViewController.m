@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.navigationController.navigationBar setBarTintColor:VioletColor];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:RGBS(255), NSFontAttributeName:[UIFont systemFontOfSize:18]};
     

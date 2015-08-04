@@ -7,18 +7,23 @@
 //
 
 #import "MyTSMViewController.h"
+
 #import "SetMyTSMViewController.h"
 #import "MyPatientViewController.h"
 #import "MyShenqingViewContrlller.h"
 #import "TrainViewController.h"
-
 #import "PhoneVerificationCodeViewController.h"
 
+
 #import "LoginViewController.h"
+//#import "MyTSMUserInfoViewController.h"
 
 #import "MyHeaderView.h"
 #import "MyProModel.h"
 #import "MyProTableViewCell.h"
+
+
+NSString *const ProTableViewCell = @"MyProTableViewCell";
 
 @interface MyTSMViewController ()<MyHeaderViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -39,11 +44,11 @@
     self.navigationController.navigationBarHidden  = YES;
     if ([GlobalMethod sharedInstance].isLogin){
         [_headView.headImageView sd_setImageWithURL:[NSURL URLWithString:UserInfoData.headPic] placeholderImage:[UIImage imageNamed:@"默认头像80"] options:SDWebImageRefreshCached];
-        _headView.nameLab.text = [NSString stringWithFormat:@"%@",UserInfoData.nickName];
+        _headView.nameLab.text = [NSString stringWithFormat:@"%@",UserInfoData.im];
         
         [self.view addSubview:self.tableView];
         
-        [_tableView registerNib:[UINib nibWithNibName:@"MyProTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+        [_tableView registerNib:[UINib nibWithNibName:ProTableViewCell bundle:nil] forCellReuseIdentifier:ProTableViewCell];
         
          [self loadData];
     }
@@ -85,17 +90,20 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyProTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    MyProTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ProTableViewCell];
     if (!cell) {
-        cell = [[MyProTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[MyProTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ProTableViewCell];
     }
-    
     cell.model = _dataArr[indexPath.section][indexPath.row];
     
     return cell;
 }
 
-#pragma mark --------UITableViewDelegate-----------
+#pragma mark --------UITableViewDelegate--------------
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 10.0f;
@@ -148,9 +156,15 @@
 {
     
     if ([GlobalMethod sharedInstance].isLogin) {
-        NSLog(@"个人信息页");
+
+//        MyTSMUserInfoViewController *infoVC = [[MyTSMUserInfoViewController alloc] init];
+//        infoVC.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:infoVC animated:YES];
+        
     }else{
+        
         LoginViewController *loginVC = [[LoginViewController alloc] init];
+        loginVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:loginVC animated:YES];
     }
     

@@ -21,12 +21,20 @@
     
     [self setNavView];
     
+    [self setLogin];
+    
 }
 
 -(void)setNavView
 {
-    self.navigationController.navigationBarHidden  = NO;
+    self.navigationController.navigationBarHidden = NO;
     self.title = @"登录";
+}
+
+-(void)setLogin
+{
+    _nikeName.text = @"903050";
+    _pawssWorld.text = @"123456";
 }
 
 #pragma mark -------登录-------------
@@ -104,7 +112,7 @@
     [GlobalMethod saveLoginInStatus:YES];
     [GlobalMethod sharedInstance].isLogin = YES;
     
-     [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
@@ -156,9 +164,6 @@
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBarHidden  = YES;
 }
-
-
-
 
 
 
