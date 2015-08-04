@@ -12,18 +12,13 @@
 
 #define URLisr @"http://app.aixinland.cn//page/news_detail.html?dataId="
 
-#define LIST @"http://www.ewt.cc"
-
-
-
-
 
 @interface DetailsViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
 {
     UIWebView *_webView;
     UIScrollView *_scrollview;
     NSMutableArray *_dataArr;
-  
+   
 }
 @end
 
@@ -67,6 +62,45 @@
      [_webView  sizeToFit];
     [self.view addSubview:_webView];
     [_webView  loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    [self loadLable];
+    
+
+}
+-(void)loadLable{
+  
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:2];
+    [dic setObject:@"1"              forKey:@"pageid"];
+    [dic setObject:@"3"      forKey:@"pagesize"];
+    
+    YYHttpRequest *hq = [[YYHttpRequest alloc] init];
+    
+    [hq POSTURLString:URLisr parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"1222220---%@",responseObject);
+        
+        if ([responseObject objectForKey:@"data"] !=nil)
+        {
+            NSArray *dataArr =[responseObject objectForKey:@"data"];
+            for (int i = 0; i < dataArr.count; i ++)
+            {
+                NewsModel *newModel = [[NewsModel alloc] init];
+                NSDictionary *dataDic = (NSDictionary *)[dataArr objectAtIndex:i];
+                newModel.a_Content = [dataDic objectForKey:@"a_Content"];
+               
+                
+                
+                
+            }
+            
+           // [_mytableView reloadData];
+            
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error");
+    }];
+    
+
     
 
 }
@@ -122,8 +156,8 @@
 {
     
 }
-//-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-//
-//
-//}
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+
+    return YES;
+}
 @end

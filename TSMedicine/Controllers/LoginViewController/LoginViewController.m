@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "UserObj.h"
+#import "YYHttpRequest.h"
 
 @interface LoginViewController ()
 
@@ -37,8 +38,8 @@
     }
     
     NSDictionary *parameters = @{@"u": _nikeName.text, @"pwd": _pawssWorld.text};
-    
-    [HttpRequest_MyApi POSTURLString:@"/User/login/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    YYHttpRequest *hq = [YYHttpRequest shareInstance_myapi];
+    [hq POSTURLString:@"/User/login/" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *rqDic = (NSDictionary *)responseObject;
         
         if ([rqDic[@"state"] boolValue]) {
@@ -61,8 +62,8 @@
 // 获取用户信息
 -(void)loadUserInfoDataWithApiDic:(NSDictionary *)param andLoginInfo:(NSDictionary *)dic_login
 {
-    
-    [HttpRequest_MyApi GETURLString:@"/User/info/" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObj) {
+    YYHttpRequest *hq = [YYHttpRequest shareInstance_myapi];
+    [hq GETURLString:@"/User/info/" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObj) {
         
         NSDictionary *rqDic = (NSDictionary *)responseObj;
         if ([rqDic[@"state"] boolValue]) {
