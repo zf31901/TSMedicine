@@ -21,7 +21,13 @@
     self.navigationController.navigationBarHidden  = NO;
     self.title = @"手机验证";
     NSMutableArray *arr=[[NSMutableArray alloc]init];
-
+  
+    
+    
+    
+    
+    
+    
     [arr addObject:[@{
                       kCellTag:@"PhoneNumCell",
                       kCellDidSelect:@"phoneNumCode",

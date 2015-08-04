@@ -8,6 +8,13 @@
 
 #import "DonationViewController.h"
 #import "AskForDonationViewController.h"
+#import "DetailModel.h"
+
+#define URL @"http://app.aixinland.cn/api/projects/List"
+
+#define URLLIST @"http://app.aixinland.cn:80/api/projects/List?pageid=2&pagesize=2"
+
+
 @interface DonationViewController ()
 @property (weak, nonatomic) IBOutlet X_TableView *tableView;
 
@@ -17,8 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.title = @"捐助项目";
+      self.title = @"捐助项目";
     
     //NSArray *titleArr = @[@"性别",@"年龄",@"手机号",@"地址",@"街道"];
     NSMutableArray *arr=[[NSMutableArray alloc]init];
@@ -28,7 +34,9 @@
     [dic setObject:@"1"              forKey:@"pageid"];
     [dic setObject:@"3"      forKey:@"pagesize"];
     YYHttpRequest *hq=[YYHttpRequest shareInstance];
+    
     [hq GETURLString:URL parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
+        
         
         NSLog(@"111111111%@",responseObj);
         
@@ -41,7 +49,7 @@
             {
                 DetailModel *model=[[DetailModel alloc]init];
                 NSDictionary *dataDic = (NSDictionary *)[dataArr objectAtIndex:i];
-                
+             
                 
                 model.pname=[dataDic objectForKey:@"pname"];
                 model.pjieshao=[dataDic objectForKey:@"pjieshao"];

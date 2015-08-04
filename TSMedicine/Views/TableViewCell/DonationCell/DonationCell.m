@@ -7,15 +7,19 @@
 //
 
 #import "DonationCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation DonationCell
 
 -(void)update
 {
-    self.donation_imgView.image = [UIImage imageNamed:self.cellData[@"imgView"]];
-    self.donation_titleLab.text = self.cellData[@"titleLab"];
-    self.donation_contentlab.text = self.cellData[@"contentlab"];
-    self.donation_unitlab.text = self.cellData[@"unitlab"];    
+   
+  
+    [self.donation_imgView setImageWithURL:[NSURL URLWithString:self.cellData[@"donation_imgView"]] placeholderImage:nil];
+    
+    self.donation_titleLab.text = self.cellData[@"donation_titleLab"];
+    self.donation_contentlab.text = self.cellData[@"donation_contentlab"];
+    self.donation_unitlab.text = self.cellData[@"donation_unitlab"];
 }
 -(CGFloat)getCellHeight;
 {

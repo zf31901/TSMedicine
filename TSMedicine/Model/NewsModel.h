@@ -16,5 +16,5 @@
 @property (nonatomic, strong)             NSString *a_SecondTitle;
 @property (nonatomic, strong)             NSString *a_Title;
 @property (nonatomic, strong)             NSString *a_From;
-
+@property(nonatomic,strong)               NSString  *a_SmallImg;
 @end

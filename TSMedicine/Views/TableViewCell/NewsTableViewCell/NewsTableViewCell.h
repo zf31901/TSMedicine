@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ShopFrame;
 
-@interface NewsTableViewCell : X_TableViewCell
+@interface NewsTableViewCell :UITableViewCell
+
 
 @property (weak, nonatomic) IBOutlet UILabel *dataTimelab;
 
@@ -17,4 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *newlab;
 
 
+@property (weak, nonatomic) IBOutlet UIImageView *iamge;
+
+@property(nonatomic, strong) ShopFrame *shopFrame;
 @end

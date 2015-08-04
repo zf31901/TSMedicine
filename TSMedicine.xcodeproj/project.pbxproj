@@ -27,7 +27,6 @@
 		161263681B3D371800EAEDE6 /* ReportViewContrlller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161263661B3D371800EAEDE6 /* ReportViewContrlller.xib */; };
 		1612636D1B3D5B8200EAEDE6 /* TrainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1612636B1B3D5B8200EAEDE6 /* TrainViewController.m */; };
 		1612636E1B3D5B8200EAEDE6 /* TrainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1612636C1B3D5B8200EAEDE6 /* TrainViewController.xib */; };
-		1615F9681B4BBA1D00B236B7 /* YYHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1615F9671B4BBA1D00B236B7 /* YYHttpRequest.m */; };
 		1615F96B1B4BC9C700B236B7 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1615F96A1B4BC9C700B236B7 /* NewsModel.m */; };
 		1615F9701B4BCC8800B236B7 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1615F96E1B4BCC8800B236B7 /* NewsTableViewCell.m */; };
 		1615F9711B4BCC8800B236B7 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1615F96F1B4BCC8800B236B7 /* NewsTableViewCell.xib */; };
@@ -175,6 +174,15 @@
 		8ABF0FB11B25296700F42BC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ABF0FB01B25296700F42BC5 /* Images.xcassets */; };
 		8ABF0FB41B25296700F42BC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ABF0FB21B25296700F42BC5 /* LaunchScreen.xib */; };
 		8B45A4915542EB51CA10317B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B3183C7A9F5A41C7F8C6C0 /* libPods.a */; };
+		9D51FD091B6EFDE6007FF74F /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D51FD041B6EFDE6007FF74F /* Shop.m */; };
+		9D51FD0A1B6EFDE6007FF74F /* ShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D51FD061B6EFDE6007FF74F /* ShopCell.m */; };
+		9D51FD0B1B6EFDE6007FF74F /* ShopFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D51FD081B6EFDE6007FF74F /* ShopFrame.m */; };
+		9D51FD101B6F126F007FF74F /* YYHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D51FD0F1B6F126F007FF74F /* YYHttpRequest.m */; };
+		9D51FD601B6F446F007FF74F /* newCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D51FD5E1B6F446F007FF74F /* newCell.m */; };
+		9D51FD611B6F446F007FF74F /* newCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D51FD5F1B6F446F007FF74F /* newCell.xib */; };
+		9DD88C7A1B6B8AAD00D22955 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD88C791B6B8AAD00D22955 /* DetailsViewController.m */; };
+		9DD88C7C1B6B8AB200D22955 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DD88C7B1B6B8AB200D22955 /* DetailsViewController.xib */; };
+		9DD88C7F1B6B8CAD00D22955 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD88C7E1B6B8CAD00D22955 /* DetailModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,8 +221,6 @@
 		1612636A1B3D5B8200EAEDE6 /* TrainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainViewController.h; sourceTree = "<group>"; };
 		1612636B1B3D5B8200EAEDE6 /* TrainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainViewController.m; sourceTree = "<group>"; };
 		1612636C1B3D5B8200EAEDE6 /* TrainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrainViewController.xib; sourceTree = "<group>"; };
-		1615F9661B4BBA1D00B236B7 /* YYHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYHttpRequest.h; path = ../Unity/YYHttpRequest.h; sourceTree = "<group>"; };
-		1615F9671B4BBA1D00B236B7 /* YYHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYHttpRequest.m; path = ../Unity/YYHttpRequest.m; sourceTree = "<group>"; };
 		1615F9691B4BC9C700B236B7 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		1615F96A1B4BC9C700B236B7 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		1615F96D1B4BCC8800B236B7 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
@@ -407,6 +413,22 @@
 		8ABF0FBE1B25296700F42BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ABF0FBF1B25296700F42BC5 /* TSMedicineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSMedicineTests.m; sourceTree = "<group>"; };
 		92EA984C20B7F103F7725FBC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9D51FD031B6EFDE6007FF74F /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
+		9D51FD041B6EFDE6007FF74F /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
+		9D51FD051B6EFDE6007FF74F /* ShopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCell.h; sourceTree = "<group>"; };
+		9D51FD061B6EFDE6007FF74F /* ShopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCell.m; sourceTree = "<group>"; };
+		9D51FD071B6EFDE6007FF74F /* ShopFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopFrame.h; sourceTree = "<group>"; };
+		9D51FD081B6EFDE6007FF74F /* ShopFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopFrame.m; sourceTree = "<group>"; };
+		9D51FD0E1B6F126F007FF74F /* YYHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYHttpRequest.h; path = ../../../../../../Applications/sf/customCellByCode/customCellByCode/YYHttpRequest.h; sourceTree = "<group>"; };
+		9D51FD0F1B6F126F007FF74F /* YYHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYHttpRequest.m; path = ../../../../../../Applications/sf/customCellByCode/customCellByCode/YYHttpRequest.m; sourceTree = "<group>"; };
+		9D51FD5D1B6F446F007FF74F /* newCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newCell.h; sourceTree = "<group>"; };
+		9D51FD5E1B6F446F007FF74F /* newCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newCell.m; sourceTree = "<group>"; };
+		9D51FD5F1B6F446F007FF74F /* newCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newCell.xib; sourceTree = "<group>"; };
+		9DD88C781B6B8AA700D22955 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		9DD88C791B6B8AAD00D22955 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		9DD88C7B1B6B8AB200D22955 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		9DD88C7D1B6B8CA800D22955 /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
+		9DD88C7E1B6B8CAD00D22955 /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		F7B3183C7A9F5A41C7F8C6C0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -538,6 +560,9 @@
 			children = (
 				1615F9691B4BC9C700B236B7 /* NewsModel.h */,
 				1615F96A1B4BC9C700B236B7 /* NewsModel.m */,
+				9DD88C7D1B6B8CA800D22955 /* DetailModel.h */,
+				9DD88C7E1B6B8CAD00D22955 /* DetailModel.m */,
+
 				16034AB31B6F0D6B0063EFD7 /* UserObj.h */,
 				16034AB41B6F0D6B0063EFD7 /* UserObj.m */,
 				16034AAF1B6F0CFE0063EFD7 /* baseModel */,
@@ -548,9 +573,18 @@
 		1615F96C1B4BCB6B00B236B7 /* NewsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				9D51FD031B6EFDE6007FF74F /* Shop.h */,
+				9D51FD041B6EFDE6007FF74F /* Shop.m */,
+				9D51FD051B6EFDE6007FF74F /* ShopCell.h */,
+				9D51FD061B6EFDE6007FF74F /* ShopCell.m */,
+				9D51FD071B6EFDE6007FF74F /* ShopFrame.h */,
+				9D51FD081B6EFDE6007FF74F /* ShopFrame.m */,
 				1615F96D1B4BCC8800B236B7 /* NewsTableViewCell.h */,
 				1615F96E1B4BCC8800B236B7 /* NewsTableViewCell.m */,
 				1615F96F1B4BCC8800B236B7 /* NewsTableViewCell.xib */,
+				9D51FD5D1B6F446F007FF74F /* newCell.h */,
+				9D51FD5E1B6F446F007FF74F /* newCell.m */,
+				9D51FD5F1B6F446F007FF74F /* newCell.xib */,
 			);
 			path = NewsTableViewCell;
 			sourceTree = "<group>";
@@ -591,8 +625,8 @@
 		1653CE3D1B69B41C001D21FF /* HttpRequest */ = {
 			isa = PBXGroup;
 			children = (
-				1615F9661B4BBA1D00B236B7 /* YYHttpRequest.h */,
-				1615F9671B4BBA1D00B236B7 /* YYHttpRequest.m */,
+				9D51FD0E1B6F126F007FF74F /* YYHttpRequest.h */,
+				9D51FD0F1B6F126F007FF74F /* YYHttpRequest.m */,
 			);
 			path = HttpRequest;
 			sourceTree = "<group>";
@@ -871,6 +905,9 @@
 				16B9099B1B281F7800211892 /* NewsViewController.h */,
 				16B9099C1B281F7800211892 /* NewsViewController.m */,
 				16B9099D1B281F7800211892 /* NewsViewController.xib */,
+				9DD88C781B6B8AA700D22955 /* DetailsViewController.h */,
+				9DD88C791B6B8AAD00D22955 /* DetailsViewController.m */,
+				9DD88C7B1B6B8AB200D22955 /* DetailsViewController.xib */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -1150,6 +1187,7 @@
 				162597C91B68E2AD00E3FA95 /* MyTSMListCell.xib in Resources */,
 				16C3F98C1B25711C0040D80C /* arrow-fight16x25_gray@1.5x.png in Resources */,
 				16C3F9A11B25711C0040D80C /* News50_press@3x.png in Resources */,
+				9DD88C7C1B6B8AB200D22955 /* DetailsViewController.xib in Resources */,
 				16C3F9A41B25711C0040D80C /* notice40@3x.png in Resources */,
 				161263621B3D034B00EAEDE6 /* MyShenqingViewContrlller.xib in Resources */,
 				168561831B4A8A5C00F47F93 /* LoginViewController.xib in Resources */,
@@ -1165,6 +1203,7 @@
 				168369661B2AD5E800A78898 /* PersonalCell.xib in Resources */,
 				168369551B2ABF4100A78898 /* AboutTSMViewController.xib in Resources */,
 				16C3F9A91B25711C0040D80C /* questions40@1x.png in Resources */,
+				9D51FD611B6F446F007FF74F /* newCell.xib in Resources */,
 				1610F2511B282B9D0038E6E2 /* ef.png in Resources */,
 				16C3F9811B25711C0040D80C /* answer40@2x.png in Resources */,
 				16C3F9921B25711C0040D80C /* choose40_nomal@1.5x.png in Resources */,
@@ -1319,16 +1358,20 @@
 				162597CE1B68E31000E3FA95 /* SetTSMCell.m in Sources */,
 				16034AC61B6F463B0063EFD7 /* WIBaseImageView.m in Sources */,
 				169071541B34243800A4CD21 /* CommitAskForViewController.m in Sources */,
-				1615F9681B4BBA1D00B236B7 /* YYHttpRequest.m in Sources */,
+				9D51FD091B6EFDE6007FF74F /* Shop.m in Sources */,
 				168369541B2ABF4100A78898 /* AboutTSMViewController.m in Sources */,
 				1683695A1B2ACC1E00A78898 /* PersonalDataViewController.m in Sources */,
 				16415CD71B6A1E0C00466A03 /* RegisterViewController.m in Sources */,
+				9DD88C7F1B6B8CAD00D22955 /* DetailModel.m in Sources */,
 				16B9099E1B281F7800211892 /* NewsViewController.m in Sources */,
 				16034AB51B6F0D6B0063EFD7 /* UserObj.m in Sources */,
 				164C0F461B6F77D00040321E /* MyProTableViewCell.m in Sources */,
 				16034ABB1B6F0E990063EFD7 /* GlobalVariable.m in Sources */,
 				1653CE4E1B6A0409001D21FF /* WIDevice.m in Sources */,
 				1692BBBF1B426E330094E7A0 /* PhoneNumCell.m in Sources */,
+				9D51FD0A1B6EFDE6007FF74F /* ShopCell.m in Sources */,
+				9D51FD0B1B6EFDE6007FF74F /* ShopFrame.m in Sources */,
+				9D51FD601B6F446F007FF74F /* newCell.m in Sources */,
 				168369651B2AD5E800A78898 /* PersonalCell.m in Sources */,
 				168369461B2AB1B800A78898 /* SetMyTSMViewController.m in Sources */,
 				16034AC11B6F45390063EFD7 /* MyHeaderView.m in Sources */,
@@ -1338,6 +1381,7 @@
 				169071431B34088700A4CD21 /* DonationCell.m in Sources */,
 				168561821B4A8A5C00F47F93 /* LoginViewController.m in Sources */,
 				165EB4761B298F440070D1F8 /* ThinLineCell.m in Sources */,
+				9D51FD101B6F126F007FF74F /* YYHttpRequest.m in Sources */,
 				161263671B3D371800EAEDE6 /* ReportViewContrlller.m in Sources */,
 				1692BBC41B4275400094E7A0 /* OnlyTextFieldCell.m in Sources */,
 				1685AF351B2FFD4200F725C3 /* MyPatientViewController.m in Sources */,
@@ -1346,6 +1390,7 @@
 				165EB4711B298F290070D1F8 /* LineCell.m in Sources */,
 				162597C81B68E2AD00E3FA95 /* MyTSMListCell.m in Sources */,
 				162597C61B68E2AD00E3FA95 /* MyTSMHeaderCell.m in Sources */,
+				9DD88C7A1B6B8AAD00D22955 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
