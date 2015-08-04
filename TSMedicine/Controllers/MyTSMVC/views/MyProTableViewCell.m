@@ -14,6 +14,7 @@
     
     [_questionBtn makeCorner:_questionBtn.size.width/2];
     _questionBtn.hidden = YES;
+    
    
 }
 

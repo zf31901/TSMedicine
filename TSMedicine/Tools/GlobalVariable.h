@@ -10,7 +10,7 @@
 
 @interface GlobalVariable : NSObject
 
-#define Main_Size                   [UIScreen mainScreen].bounds.size
+//#define Main_Size                   [UIScreen mainScreen].bounds.size
 #define StatusBar_Height            20
 #define Navbar_Height               44
 #define Tabbar_Height               49
@@ -38,10 +38,10 @@
 #define NETWORKFAILED               @"数据加载失败"
 
 //颜色快速生成
-#define RGB(r,g,b)                  [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
-#define RGBA(r,g,b,a)               [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
-#define RGBS(s)                     [UIColor colorWithRed:s/255.0 green:s/255.0 blue:s/255.0 alpha:1.0]
-#define NavBarColor                 [UIColor colorWithRed:204/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]
+//#define RGB(r,g,b)                  [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+//#define RGBA(r,g,b,a)               [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+//#define RGBS(s)                     [UIColor colorWithRed:s/255.0 green:s/255.0 blue:s/255.0 alpha:1.0]
+//#define NavBarColor                 [UIColor colorWithRed:204/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]
 
 //Json解析
 #define HTTP_STATE                  @"state"                //网络请求状态 0:fail 1:success

@@ -13,6 +13,7 @@
 #define Main_Size                   [UIScreen mainScreen].bounds.size
 #define TabBar_Height               49
 #define WEAKSELF __weak typeof(self) weakSelf = self;
+
 //颜色快速生成
 #define RGB(r,g,b)                  [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 #define RGBA(r,g,b,a)               [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
@@ -22,12 +23,12 @@
 #define NavBarColor                 [UIColor colorWithRed:204/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]
 
 
-
 //版本号
 #define current_version [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
 #define SysFont(f)  [UIFont systemFontOfSize:f]
 #define BoldFont(f) [UIFont boldSystemFontOfSize:f]
+#define FontWithName(fontName,f) [UIFont fontWithName:fontName size:f];
 
 
 //获取十六进制颜色值
