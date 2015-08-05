@@ -40,30 +40,7 @@
     }
     return self;
 }
-/*
-- (void)update
-{
-    //self.backgroundColor = self.cellData[@"color"];
-   
-    self.fromeLable.text = self.cellData[@"fromeLable"];
-    self.newlabel.text = self.cellData[@"newlabel"];
-    self.dataTimew.text = self.cellData[@"dataTimew"];
-    
-    [self.iamge setImageWithURL:[NSURL URLWithString:self.cellData[@"iamge"]]placeholderImage:nil];
-   
-    [self.iamgeView setImageWithURL:[NSURL URLWithString:self.cellData[@"iamgeView"]]placeholderImage:nil];
 
-    //    CGRect fram=self.frame;
-    //    fram.size.height=100;
-    //    self.frame=fram;
-    
-    
-}
--(CGFloat)getCellHeight
-{
-    return [self.cellData[@"h"] floatValue];
-}
-*/
 
 
 @end

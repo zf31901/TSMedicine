@@ -10,7 +10,7 @@
 #import "NewsModel.h"
 #import "NewsTableViewCell.h"
 
-#define URLisr @"http://app.aixinland.cn//page/news_detail.html?dataId="
+#define URLisr @"http://app.aixinland.cn//page/news_detail.html?dataId=3"
 
 
 @interface DetailsViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
@@ -18,8 +18,10 @@
     UIWebView *_webView;
     UIScrollView *_scrollview;
     NSMutableArray *_dataArr;
-   
+    NSString *terr;
 }
+
+
 @end
 
 @implementation DetailsViewController
@@ -51,18 +53,18 @@
     _webView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W,SCREEN_H- 64)];
 //SCREEN_H- TOPBAR- BOTTOMBAR
     _webView.delegate=self;
-    _webView.scrollView.bounces=NO;
-    _webView.scrollView.showsHorizontalScrollIndicator=NO;
-    _webView.scrollView.scrollEnabled=NO;
+//    _webView.scrollView.bounces=NO;
+//    _webView.scrollView.showsHorizontalScrollIndicator=NO;
+//    _webView.scrollView.scrollEnabled=NO;
    
-    NSString *url=[NSString stringWithFormat:@"%@",URLisr];
+    NSString *url=[NSString stringWithFormat:URLisr,terr];
     NSLog(@"url------%@",url);
-   // NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:URLisr]];
    
+   [_webView  loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
      [_webView  sizeToFit];
     [self.view addSubview:_webView];
-    [_webView  loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
-    [self loadLable];
+    
+   // [self loadLable];
     
 
 }
@@ -73,33 +75,29 @@
     [dic setObject:@"1"              forKey:@"pageid"];
     [dic setObject:@"3"      forKey:@"pagesize"];
     
+   
     YYHttpRequest *hq = [[YYHttpRequest alloc] init];
-    
-    [hq POSTURLString:URLisr parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"1222220---%@",responseObject);
+   [hq  GETURLString:@"http://app.aixinland.cn//page/news_detail.html?dataId=%@" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
         
-        if ([responseObject objectForKey:@"data"] !=nil)
+        if ([responseObj objectForKey:@"data"] !=nil)
         {
-            NSArray *dataArr =[responseObject objectForKey:@"data"];
+            NSArray *dataArr =[responseObj objectForKey:@"data"];
             for (int i = 0; i < dataArr.count; i ++)
             {
                 NewsModel *newModel = [[NewsModel alloc] init];
                 NSDictionary *dataDic = (NSDictionary *)[dataArr objectAtIndex:i];
                 newModel.a_Content = [dataDic objectForKey:@"a_Content"];
-               
-                
-                
                 
             }
             
            // [_mytableView reloadData];
             
         }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error");
-    }];
-    
+   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       
+       NSLog(@"%@",error);
+       
+   }];
 
     
 
@@ -157,7 +155,9 @@
     
 }
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-
+    NSString *urlString = [[request URL] absoluteString];
+    NSLog(@"urlString---  %@",urlString);
     return YES;
 }
+
 @end

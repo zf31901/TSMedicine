@@ -7,7 +7,7 @@
 //caculate every compoment's frame
 
 #import <Foundation/Foundation.h>
-@class Shop;
+
 
 @interface ShopFrame : NSObject
 
@@ -17,10 +17,13 @@
 @property(nonatomic,assign,readonly)CGRect  fromLable;
 @property(nonatomic,assign,readonly)CGRect  time;
 
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *dcription;
+@property (nonatomic, copy) NSString *image;
 
 
 
 @property(nonatomic, assign )  CGFloat cellHeight;
-@property(nonatomic, strong) Shop *shop;
+
 
 @end

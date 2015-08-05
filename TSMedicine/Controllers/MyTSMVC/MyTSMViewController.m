@@ -14,6 +14,7 @@
 #import "TrainViewController.h"
 #import "PhoneVerificationCodeViewController.h"
 
+#import "MyApplication.h"
 
 #import "LoginViewController.h"
 #import "MyTSMUserInfoViewController.h"
