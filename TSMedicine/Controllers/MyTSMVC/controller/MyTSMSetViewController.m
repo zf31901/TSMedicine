@@ -19,6 +19,9 @@
     
     [self setNavView];
     
+    
+    
+    
 }
 
 -(void)setNavView

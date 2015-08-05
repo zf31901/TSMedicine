@@ -25,32 +25,25 @@
     
 @implementation NewsTableViewCell
     
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-    {
-        self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-        if (self) {
-//     CGSize rtSize;
-//            
-//rtSize=[string sizeWithFont:font constrainedToSize:CGSizeMake(width, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
-            
-            
-            
-        }
-        return self;
-    }
-    
-- (void)awakeFromNib
-    {
-        // Initialization code
-    }
-    
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-    {
-        [super setSelected:selected animated:animated];
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self=[super initWithCoder:aDecoder];
+    if (self) {
+        UILabel *fromlable=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 150, 40)];
+        fromlable.numberOfLines=0;
         
-        // Configure the view for the selected state
+        CGRect rect = [fromlable.text boundingRectWithSize:CGSizeMake(200, 2000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:fromlable.font} context:nil];
+        
+        //设置label的高度
+        fromlable.frame = CGRectMake(0, 20, 200, rect.size.height);
+        
+        [self.contentView addSubview:fromlable];
+        
     }
+    return self;
     
+}
+    
+
 
     
     @end

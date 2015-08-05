@@ -148,7 +148,7 @@ NSString *const ProTableViewCell = @"MyProTableViewCell";
 -(void)loadData
 {
     _dataArr = [NSMutableArray array];
-    NSString *key = @"2";
+    NSString *key = @"3";
     
     NSArray *picArr = nil;
     if ([key isEqualToString:@"1"]) {
