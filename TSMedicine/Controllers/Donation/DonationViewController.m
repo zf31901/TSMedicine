@@ -38,12 +38,12 @@
     [hq GETURLString:URL parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
         
         
-        NSLog(@"111111111%@",responseObj);
+//        NSLog(@"111111111%@",responseObj);
         
         if ([responseObj objectForKey:@"data"] !=nil) {
             NSArray *dataArr =[responseObj objectForKey:@"data"];
             
-            NSLog(@"222222%lu",(unsigned long)dataArr.count);
+//            NSLog(@"222222%lu",(unsigned long)dataArr.count);
             
             for (int i = 0; i < dataArr.count; i++)
             {
@@ -57,7 +57,7 @@
                 model.pimage=[dataDic  objectForKey:@"pimage"];
                 
                 [testArr addObject:model];
-                NSLog(@"dic12345----%@",dataDic);
+//                NSLog(@"dic12345----%@",dataDic);
                 
                 [arr addObject:[@{
                                   kCellTag:@"DonationCell",

@@ -41,6 +41,12 @@ NSString *const UserInfoView = @"MyUserInfoView";
     
     [_infoView.headImageView sd_setImageWithURL:[NSURL URLWithString:UserInfoData.headPic] placeholderImage:[UIImage imageNamed:default_head] options:SDWebImageRefreshCached];
     
+    _infoView.sexLab.text = @"男";
+    _infoView.ageLab.text = @"25";
+    _infoView.phoneLab.text = [NSString stringWithFormat:@"%@",UserInfoData.phone];
+    _infoView.addreLab.text = @"广东";
+    _infoView.streetLab.text = @"蛇口大道";
+    
 }
 
 
