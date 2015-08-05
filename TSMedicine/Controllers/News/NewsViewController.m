@@ -73,7 +73,7 @@
     YYHttpRequest *hq = [[YYHttpRequest alloc] init];
     
     [hq POSTURLString:@"http://app.aixinland.cn/api/news/List2" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
-       NSLog(@"12390---%@",responseObject);
+//       NSLog(@"12390---%@",responseObject);
         
         if ([responseObject objectForKey:@"data"] !=nil)
         {

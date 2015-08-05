@@ -11,3 +11,4 @@
 
 #define CommonBgColor (UIColorFromRGB(0x915ce6))
 
+#define default_head @"默认头像80"
