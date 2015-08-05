@@ -14,4 +14,7 @@
 @property(nonatomic,strong)NSString *dataTime;
 @property(nonatomic,strong)NSString *caseLable;
 
+@property(nonatomic,strong)NSString  *goodIndex;//记录ID的值
+
+
 @end

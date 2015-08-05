@@ -9,8 +9,11 @@
 #import "DetailsViewController.h"
 #import "NewsModel.h"
 #import "NewsTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
+#import "NewsViewController.h"
 
-#define URLisr @"http://app.aixinland.cn//page/news_detail.html?dataId=3"
+
+#define URLisr @"http://app.aixinland.cn//page/news_detail.html?dataId="
 
 
 @interface DetailsViewController ()<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
@@ -19,6 +22,9 @@
     UIScrollView *_scrollview;
     NSMutableArray *_dataArr;
     NSString *terr;
+    
+    
+    
 }
 
 
@@ -45,7 +51,7 @@
     [self  caselable];
     [self  buidLeftBtn];
     [self UIlable];
-    
+    [self loadLable];
     
 }
 
@@ -57,14 +63,15 @@
 //    _webView.scrollView.showsHorizontalScrollIndicator=NO;
 //    _webView.scrollView.scrollEnabled=NO;
    
-    NSString *url=[NSString stringWithFormat:URLisr,terr];
-    NSLog(@"url------%@",url);
+    //NSString *url=[NSString stringWithFormat:URLisr,_goodIndex];
+    NSString *url=[NSString stringWithFormat:@"%@%@",URLisr,_goodIndex];
+    NSLog(@"url1234------%@",url);
    
    [_webView  loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
      [_webView  sizeToFit];
     [self.view addSubview:_webView];
     
-   // [self loadLable];
+   
     
 
 }
@@ -77,7 +84,10 @@
     
    
     YYHttpRequest *hq = [[YYHttpRequest alloc] init];
-   [hq  GETURLString:@"http://app.aixinland.cn//page/news_detail.html?dataId=%@" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
+   
+    NSString *url=[NSString stringWithFormat:@"%@%@",URLisr,_goodIndex];
+  
+    [hq  GETURLString:url parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObj) {
         
         if ([responseObj objectForKey:@"data"] !=nil)
         {
@@ -87,6 +97,7 @@
                 NewsModel *newModel = [[NewsModel alloc] init];
                 NSDictionary *dataDic = (NSDictionary *)[dataArr objectAtIndex:i];
                 newModel.a_Content = [dataDic objectForKey:@"a_Content"];
+                newModel.a_ID=[dataDic objectForKey:@"a_ID"];
                 
             }
             
@@ -159,5 +170,27 @@
     NSLog(@"urlString---  %@",urlString);
     return YES;
 }
+
+
+//#pragma mark - Table view data source
+//
+//
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    
+//    return 1;
+//}
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell1=[tableView dequeueReusableCellWithIdentifier:@"NewsCell" forIndexPath:indexPath];
+//    NewsModel *model = [_dataArr objectAtIndex:indexPath.row];
+//    
+//    
+//    
+//    return cell1;
+//}
+
 
 @end

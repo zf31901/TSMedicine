@@ -14,6 +14,9 @@
 
 #import "UIImageView+AFNetworking.h"
 
+#define URLisr @"http://app.aixinland.cn//page/news_detail.html?dataId=%@"
+
+
 @interface NewsViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 {
     NSMutableArray  *brr;
@@ -21,6 +24,8 @@
     
     NSMutableArray *_dataArr;
     UITableView *_mytableView;
+    NSString *tree;
+    NSInteger a_id;
     
     
     
@@ -87,6 +92,7 @@
                 newModel.a_AddDate = [dataDic objectForKey:@"a_AddDate"];
                 
                 newModel.a_SmallImg=[dataDic objectForKey:@"a_SmallImg"];
+                newModel.a_ID=[dataDic objectForKey:@"a_ID"];
                 [_dataArr addObject:newModel];
                 
              //   NSLog(@"rqdic1111----%@",dataDic);
@@ -178,10 +184,17 @@
         return 100;
     }
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     DetailsViewController *ctl2=[[DetailsViewController alloc]init];
-//    NSDictionary *dic=_dataArr[indexPath.row];
-//    ctl2.goodIndex=[dic [@""]integerValue];
+//   NSDictionary *dic=_dataArr[indexPath.row];
+    NewsModel *arr=_dataArr[indexPath.row];
+    
+    ctl2.goodIndex=arr.a_ID;
+    
+   //ctl2.goodIndex=[NSString stringWithFormat:@"%@",dic[@"a_ID"]];
+    
+    
     [self.navigationController pushViewController:ctl2 animated:YES];
 }
 
