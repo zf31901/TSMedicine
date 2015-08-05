@@ -17,6 +17,8 @@
 
 #import "LoginViewController.h"
 #import "MyTSMUserInfoViewController.h"
+#import "MyTSMNoticeViewController.h"
+#import "MyTSMSetViewController.h"
 
 #import "MyHeaderView.h"
 #import "MyProModel.h"
@@ -103,6 +105,28 @@ NSString *const ProTableViewCell = @"MyProTableViewCell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    if (indexPath.section == 1) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                MyTSMNoticeViewController *noticeVC = [[MyTSMNoticeViewController alloc] init];
+                [self.navigationController pushViewController:noticeVC animated:YES];
+            }
+                break;
+                
+            case 1:
+            {
+                MyTSMSetViewController *setVC = [[MyTSMSetViewController alloc] init];
+                [self.navigationController pushViewController:setVC animated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+    }
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -123,26 +147,62 @@ NSString *const ProTableViewCell = @"MyProTableViewCell";
 -(void)loadData
 {
     _dataArr = [NSMutableArray array];
+    NSString *key = @"2";
     
-    NSArray *picArr = [NSArray arrayWithObjects:@"appl40", @"questions40",@"notice40",@"Set-up40",nil];
-    NSArray *titleArr = [NSArray arrayWithObjects:@"我的申请", @"我的提问",@"系统通知",@"设置",nil];
+    NSArray *picArr = nil;
+    if ([key isEqualToString:@"1"]) {
+        picArr = [NSArray arrayWithObjects:@"appl40", @"questions40", nil];
+    }else if ([key isEqualToString:@"2"]){
+        picArr = [NSArray arrayWithObjects:@"patient40", @"training40", @"answer40", nil];
+    }else if ([key isEqualToString:@"3"] || [key isEqualToString:@"4"]){
+        picArr = [NSArray arrayWithObjects:@"training40", nil];
+    }else{
+        
+    }
+    NSArray *comPicArr = [NSArray arrayWithObjects:@"notice40", @"Set-up40",nil];
+    
+    NSArray *titleArr = nil;
+    if ([key isEqualToString:@"1"]) {
+        titleArr = [NSArray arrayWithObjects:@"我的申请", @"我的提问", nil];
+    }else if ([key isEqualToString:@"2"]){
+        titleArr = [NSArray arrayWithObjects:@"我的患者", @"我的培训", @"我的问答", nil];
+    }else if ([key isEqualToString:@"3"] || [key isEqualToString:@"4"]){
+        titleArr = [NSArray arrayWithObjects:@"我的培训", nil];
+    }else{
+    
+    }
+    NSArray *comTitleArr = [NSArray arrayWithObjects:@"系统通知", @"设置", nil];
     
     NSMutableArray *arr1 = [NSMutableArray array];
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < titleArr.count; i++) {
+        
         MyProModel *model = [[MyProModel alloc] init];
         model.pic = picArr[i];
         model.title = titleArr[i];
-        if (i == 1) {
-            model.msg = [NSString stringWithFormat:@"%d",i];
+        
+        if ([key isEqualToString:@"1"]) {
+            if (i == 1) {
+                 model.msg = [NSString stringWithFormat:@"%d",i];
+            }
+        }else if ([key isEqualToString:@"2"]){
+            if (i == 1) {
+                model.msg = [NSString stringWithFormat:@"%d",i];
+            }
+        }else if ([key isEqualToString:@"3"] || [key isEqualToString:@"4"]){
+            if (i == 0) {
+                model.msg = [NSString stringWithFormat:@"%d",i];
+            }
         }
         [arr1 addObject:model];
     }
     
     NSMutableArray *arr2 = [NSMutableArray array];
-    for (int i = 2; i < 4; i++) {
+    for (int i = 0; i < comTitleArr.count; i++) {
+        
         MyProModel *model = [[MyProModel alloc] init];
-        model.pic = picArr[i];
-        model.title = titleArr[i];
+        model.pic = comPicArr[i];
+        model.title = comTitleArr[i];
+        
         [arr2 addObject:model];
     }
     
