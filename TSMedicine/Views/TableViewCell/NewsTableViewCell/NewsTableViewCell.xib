@@ -40,15 +40,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mhg-ML-cvz">
-                        <rect key="frame" x="230" y="9" width="85" height="65"/>
+                        <rect key="frame" x="230" y="9" width="85" height="81.5"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11:32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5W-eR-Ixy">
-                        <rect key="frame" x="122" y="51" width="60" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="k1L-qX-01E"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-B7-Xm4">
+                        <rect key="frame" x="77" y="72" width="145" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.56023121843434343" green="0.56023121843434343" blue="0.56023121843434343" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -57,15 +54,13 @@
                     <constraint firstItem="wnj-qU-p3L" firstAttribute="top" secondItem="yJH-QH-lfi" secondAttribute="bottom" constant="11" id="5Bx-47-3w9"/>
                     <constraint firstItem="yJH-QH-lfi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="7Ox-Bn-34a"/>
                     <constraint firstItem="OYe-Hy-xEe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="9pP-Ot-HB9"/>
-                    <constraint firstItem="wnj-qU-p3L" firstAttribute="top" secondItem="P5W-eR-Ixy" secondAttribute="bottom" constant="11" id="Rgs-fQ-XBj"/>
                     <constraint firstAttribute="bottom" secondItem="wnj-qU-p3L" secondAttribute="bottom" id="Xfn-1z-Tic"/>
                     <constraint firstItem="OYe-Hy-xEe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="bqb-xU-Z2q"/>
                     <constraint firstAttribute="trailing" secondItem="wnj-qU-p3L" secondAttribute="trailing" constant="12" id="daa-3e-qYJ"/>
-                    <constraint firstAttribute="trailing" secondItem="P5W-eR-Ixy" secondAttribute="trailing" constant="12" id="uVT-zi-Ubp"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="dataTimelab" destination="P5W-eR-Ixy" id="u6T-uE-8Nd"/>
+                <outlet property="dataTimelab" destination="aTc-B7-Xm4" id="4Mg-qB-KX2"/>
                 <outlet property="fromLab" destination="yJH-QH-lfi" id="6HW-b9-ABc"/>
                 <outlet property="iamge" destination="Mhg-ML-cvz" id="ach-SD-gZr"/>
                 <outlet property="newlab" destination="OYe-Hy-xEe" id="XsH-vf-lzQ"/>

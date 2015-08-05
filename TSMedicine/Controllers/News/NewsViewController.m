@@ -12,9 +12,6 @@
 #import "NewsTableViewCell.h"
 #import "newCell.h"
 
-#import "ShopCell.h"
-#import "Shop.h"
-#import "ShopFrame.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface NewsViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
@@ -140,7 +137,7 @@
        
         
         [cell.iamgeView setImageWithURL:[NSURL URLWithString:model.a_SmallImg]];
-        NSLog(@"model.a_SmallImg------%@",model.a_SmallImg);
+      //  NSLog(@"model.a_SmallImg------%@",model.a_SmallImg);
        
                 // }
     return cell;
